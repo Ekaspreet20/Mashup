@@ -13,7 +13,7 @@ import sys
 def send_email(email, file):
     msg = MIMEMultipart()
     msg['Subject'] = 'Result'
-    msg['From'] = 'ekaspreet0209@gmail.com'
+    msg['From'] = 'ekaspreet9566@gmail.com'
     msg['To'] = email
     
     with open(file, 'rb') as f:
@@ -37,9 +37,10 @@ singername = st.text_input("Enter singer name:")
 sn = singername.replace(' ','') + "songs"
 number_of_videos = st.number_input("Enter number of videos:", step=1, format='%d')
 duration_of_each_video = st.number_input("Enter duration of each video:", step=1, format='%d')
-email = st.text_input("Enter email:")
+email = st.text_input("Enter email: ")
 resultfile = 'result.mp3'
 if st.button("Generate Mashup"):
+    st.write("Result will be sent to your email in 30 min. Thankyou for using our service")
     # Perform the mashup generation
     urls = urllib.request.urlopen('https://www.youtube.com/results?search_query=' + str(sn))
     id_video = re.findall(r"watch\?v=(\S{11})", urls.read().decode())
