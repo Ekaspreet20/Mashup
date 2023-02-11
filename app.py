@@ -65,7 +65,7 @@ if st.button("Generate Mashup"):
     except:
         sys.exit("Error")
      
-    result = str("/result.mp3" )
+    result = str("result.mp3" )
     # Create the zip file
     with zipfile.ZipFile('result.zip', mode='w') as archive:
         archive.write(result)
