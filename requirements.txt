@@ -1,10 +1,9 @@
-streamlit 
-smtplib
+streamlit==1.18.1
 zipfile
 email.mime.multipart 
 email.mime.application
-pytube
-pydub 
+pytube==12.1.2
+pydub==0.25.1 
 urllib.request
 re
 os
