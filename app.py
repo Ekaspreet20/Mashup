@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import smtplib
 import zipfile
@@ -38,7 +36,7 @@ st.markdown("<h1 style='text-align: center; color: blue;'>Mashup Generator</h1>"
 singername = st.text_input("Enter singer name:")
 sn = singername.replace(' ','') + "songs"
 number_of_videos = st.number_input("Enter number of videos:", step=1, format='%d')
-duration_of_each_video = st.number_input("Enter duration of each video:", step=1, format='%d')
+duration_of_each_video = st.number_input(<*font color ='red'>"Enter duration of each video:", step=1, format='%d')
 email = st.text_input("Enter email: ")
 resultfile = 'result.mp3'
 if st.button("Generate Mashup"):
