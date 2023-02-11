@@ -53,13 +53,10 @@ if st.button("Generate Mashup"):
         mp4files = ytube.streams.filter(only_audio=True).first().download(filename='videofile-'+str(i)+'.mp3')
 
     print("Mashup generation in process")
-    cut_files = []
     if os.path.isfile("videofile-0.mp3"):
         final_audio = AudioSegment.from_file("videofile-0.mp3")[:duration_of_each_video*1000]
-        cut_files.append("/videofile-0.mp3")
     for i in range(1,number_of_videos):
-        aud_file = str("/videofile-"+str(i)+".mp3")
-        cut_files.append(aud_file)
+        aud_file = str("videofile-"+str(i)+".mp3")
         final_audio = final_audio.append(AudioSegment.from_file(aud_file)[:duration_of_each_video*1000],crossfade=1000)
     
     try:
@@ -67,9 +64,7 @@ if st.button("Generate Mashup"):
         print("Mashup ready.Check your working directory for file name : " + str(resultfile))
     except:
         sys.exit("Error")
-            
-    for file in cut_files:
-            os.remove(file)
+     
     result = str("/result.mp3" )
     # Create the zip file
     with zipfile.ZipFile('result.zip', mode='w') as archive:
