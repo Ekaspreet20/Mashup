@@ -54,9 +54,9 @@ if st.button("Generate Mashup"):
     cut_files = []
     if os.path.isfile("videofile-0.mp3"):
         final_audio = AudioSegment.from_file("videofile-0.mp3")[:duration_of_each_video*1000]
-        cut_files.append(str(os.getcwd()) + "/videofile-0.mp3")
+        cut_files.append("/videofile-0.mp3")
     for i in range(1,number_of_videos):
-        aud_file = str(os.getcwd()) + "/videofile-"+str(i)+".mp3"
+        aud_file = str("/videofile-"+str(i)+".mp3")
         cut_files.append(aud_file)
         final_audio = final_audio.append(AudioSegment.from_file(aud_file)[:duration_of_each_video*1000],crossfade=1000)
     
@@ -68,7 +68,7 @@ if st.button("Generate Mashup"):
             
     for file in cut_files:
             os.remove(file)
-    result = str(os.getcwd()) + "/result.mp3"
+    result = str("/result.mp3" )
     # Create the zip file
     with zipfile.ZipFile('result.zip', mode='w') as archive:
         archive.write(result)
