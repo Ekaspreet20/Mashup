@@ -1,7 +1,4 @@
-!pip install pydub[ffmpeg]
-!pip install ffmpeg
-!pip install ffprobe
-!pip install ffmpeg-python
+
 
 import streamlit as st
 import smtplib
