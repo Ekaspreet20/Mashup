@@ -42,7 +42,9 @@ duration_of_each_video = st.number_input("Enter duration of each video:", step=1
 email = st.text_input("Enter email: ")
 resultfile = 'result.mp3'
 if st.button("Generate Mashup"):
-    st.write("Result will be sent to your email in 30 min. Thankyou for using our service")
+    st.write("Result will be sent to your email within 30 min.Sorry for the delay and Thankyou for using our service")
+    st.write("If you encounter any html error, please refresh.")
+
     # Perform the mashup generation
     urls = urllib.request.urlopen('https://www.youtube.com/results?search_query=' + str(sn))
     id_video = re.findall(r"watch\?v=(\S{11})", urls.read().decode())
